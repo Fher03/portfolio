@@ -5,7 +5,7 @@ type Links = {
   isSelected?: boolean;
 };
 
-let links = reactive<Links[]>([
+const links = reactive<Links[]>([
   {
     name: "Inicio",
     url: "#",
@@ -30,10 +30,9 @@ let links = reactive<Links[]>([
 ]);
 
 function changeSelectedLink(index: number) {
-  links = links.map((link) => ({
-    ...link,
-    isSelected: false,
-  }));
+  links.forEach((link) => {
+    link.isSelected = false;
+  });
   if (links[index]) {
     links[index].isSelected = true;
   }
@@ -41,10 +40,8 @@ function changeSelectedLink(index: number) {
 </script>
 
 <template>
-  <nav class="sticky top-0 flex justify-around items-center bg-[#212121] h-20 w-full">
-    <h2 class="text-white text-2xl">
-      <span class="text-red-500">></span> Fher03<span class="text-red-500">_dev</span>
-    </h2>
+  <nav class="sticky top-0 text-white flex justify-between px-40 items-center bg-[#212121] h-20 w-full">
+    <h2 class="text-2xl"><span class="text-red-500">></span> Fher03<span class="text-red-500">_dev</span></h2>
     <ul class="flex gap-4">
       <li
         v-for="(link, index) in links"
