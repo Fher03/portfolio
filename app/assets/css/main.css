@@ -1,2 +1,17 @@
 @import 'tailwindcss';
 
+@theme {
+  --background-color: #212121;
+}
+
+body {
+  font-family: "Inconsolata", sans-serif;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('~/assets/fonts/inconsolata/Inconsolata-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+
+}
