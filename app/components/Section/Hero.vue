@@ -6,9 +6,13 @@
     <h2 class="text-white text-4xl">
       <span class="text-red-500">const</span> <span class="text-gray-400">role</span> = "Full-Stack Software Developer";
     </h2>
-    <div class="text-gray-400 text-lg font-medium">
+    <div class="text-gray-400 text-2xl font-medium my-5">
       <p>// Transformando ideas en código limpio y escalable.</p>
       <p>// Especializado en crear experiencias digitales excepcionales.</p>
+    </div>
+    <div class="flex gap-10">
+      <BaseButton color="primary">Ver Proyectos</BaseButton>
+      <base-button color="secondary">Contacto</base-button>
     </div>
   </section>
 </template>
