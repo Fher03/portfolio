@@ -38,7 +38,7 @@ function changeSelectedLink(index: number) {
   }
 }
 
-function showSidebar() {
+function toggleNavbar() {
   isSidebarOpen.value = !isSidebarOpen.value;
 }
 </script>
@@ -49,18 +49,31 @@ function showSidebar() {
   >
     <div
       class="md:hidden cursor-pointer"
-      @click="showSidebar"
+      @click="toggleNavbar"
     >
-      <Icon
-        v-if="isSidebarOpen"
-        name="charm:cross"
-        class="text-4xl"
-      />
-      <Icon
-        v-else
-        name="charm:menu-hamburger"
-        class="text-4xl"
-      />
+      <Transition
+        enter-from-class="opacity-0 rotate-90 scale-50"
+        enter-active-class="duration-300 transition ease-out"
+        enter-to-class="opacity-100 rotate-0 scale-100"
+      >
+        <Icon
+          v-if="!isSidebarOpen"
+          name="charm:menu-hamburger"
+          class="text-4xl"
+        />
+      </Transition>
+
+      <Transition
+        enter-from-class="opacity-0 rotate-0 scale-50"
+        enter-active-class="duration-300 transition ease-out"
+        enter-to-class="opacity-100 rotate-90 scale-100"
+      >
+        <Icon
+          v-if="isSidebarOpen"
+          name="charm:cross"
+          class="text-4xl"
+        />
+      </Transition>
     </div>
     <h2 class="flex gap-3 text-center md:text-left w-full text-2xl">
       <span class="text-red-500">></span> Fher03<span class="text-red-500">_dev</span>
@@ -81,7 +94,6 @@ function showSidebar() {
     </ul>
   </nav>
 
-  <!-- Sidebar con backdrop blur -->
   <Transition
     enter-active-class="transition duration-300 ease-out"
     enter-from-class="opacity-0"
@@ -92,8 +104,8 @@ function showSidebar() {
   >
     <div
       v-if="isSidebarOpen"
-      class="fixed lg:hidden top-20 bg-black/90 backdrop-blur-md h-full w-full z-50"
-      @click="showSidebar"
+      class="fixed lg:hidden top-20 bg-black/70 backdrop-blur-sm h-full w-full z-50"
+      @click="toggleNavbar"
     >
       <Transition
         enter-active-class="transition duration-300 ease-out delay-100"
@@ -110,10 +122,10 @@ function showSidebar() {
           <li
             v-for="(link, index) in links"
             :key="index"
-            class="text-2xl cursor-pointer hover:scale-110 transition-transform"
+            class="text-2xl cursor-pointer"
             @click.stop="
               changeSelectedLink(index);
-              showSidebar();
+              toggleNavbar;
             "
           >
             <a
