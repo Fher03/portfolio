@@ -4,6 +4,7 @@ type ButtonColor = "primary" | "secondary" | "anchor";
 const props = defineProps<{
   type?: "anchor" | "button" | "submit";
   color?: ButtonColor;
+  path: string;
 }>();
 
 const colorStyles: Record<ButtonColor, string> = {
@@ -17,6 +18,20 @@ const hoverStyles: Record<ButtonColor, string> = {
   secondary: "bg-gray-500",
   anchor: "border-none",
 };
+
+function moveToSection(event: MouseEvent) {
+  if (props.type === "anchor" && props.path.startsWith("#")) {
+    event.preventDefault();
+    const element = document.querySelector(props.path);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    }
+  }
+}
 </script>
 
 <template>
@@ -34,7 +49,8 @@ const hoverStyles: Record<ButtonColor, string> = {
   </button>
   <a
     v-else
-    href="#"
+    :href="props.path"
+    @click="moveToSection"
     >[<slot />]</a
   >
 </template>
