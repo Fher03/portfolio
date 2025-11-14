@@ -10,6 +10,7 @@ onMounted(() => {
 </script>
 <template>
   <section
+    id="hero"
     class="flex flex-col h-[700px] gap-10 xl:gap-7 text-center items-center justify-center md:h-[500px] xl:h-screen w-full"
   >
     <h1 class="text-6xl xl:text-8xl text-white font-bold">
@@ -34,7 +35,7 @@ onMounted(() => {
     </div>
     <div class="flex gap-10">
       <BaseButton color="primary">Ver Proyectos</BaseButton>
-      <base-button color="secondary">Contacto</base-button>
+      <BaseButton color="secondary">Contacto</BaseButton>
     </div>
   </section>
 </template>

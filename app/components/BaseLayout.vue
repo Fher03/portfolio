@@ -8,24 +8,24 @@ const isSidebarOpen = ref(false);
 const links = reactive<Links[]>([
   {
     name: "Inicio",
-    url: "#",
+    url: "#hero",
     isSelected: true,
   },
   {
     name: "Proyectos",
-    url: "#",
+    url: "#projects",
   },
   {
     name: "Tecnologias",
-    url: "#",
+    url: "#tech",
   },
   {
     name: "Sobre mí",
-    url: "#",
+    url: "#aboutme",
   },
   {
     name: "Contacto",
-    url: "#",
+    url: "#contact",
   },
 ]);
 
@@ -83,12 +83,16 @@ function toggleNavbar() {
         v-for="(link, index) in links"
         :key="index"
         class="cursor-pointer hover:text-red-400 transition-colors"
-        @click="changeSelectedLink(index)"
+        @click="
+          changeSelectedLink(index);
+          toggleNavbar;
+        "
       >
-        <a
-          :href="link.url"
+        <BaseButton
+          type="anchor"
+          :path="link.url"
           :class="{ 'text-red-500': link.isSelected }"
-          >[{{ link.name }}]</a
+          >{{ link.name }}</BaseButton
         >
       </li>
     </ul>
