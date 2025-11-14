@@ -4,7 +4,7 @@ type ButtonColor = "primary" | "secondary" | "anchor";
 const props = defineProps<{
   type?: "anchor" | "button" | "submit";
   color?: ButtonColor;
-  path: string;
+  path?: string;
 }>();
 
 const colorStyles: Record<ButtonColor, string> = {
