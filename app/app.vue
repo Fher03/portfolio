@@ -1,3 +1,5 @@
 <template>
-  <BaseLayout />
+  <BaseLayout>
+    <SectionHero />
+  </BaseLayout>
 </template>

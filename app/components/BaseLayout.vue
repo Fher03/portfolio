@@ -46,7 +46,7 @@ function showSidebar() {
 </script>
 
 <template>
-  <nav class="fixed top-0 text-white flex gap-10 px-10 md:px-20 items-center bg-[#212121] h-20 w-full">
+  <nav class="fixed top-0 text-white flex gap-10 px-10 md:px-20 items-center h-20 w-full border-b-2 border-gray-600/50">
     <div
       class="md:hidden"
       @click="showSidebar"
@@ -107,4 +107,7 @@ function showSidebar() {
       </ul>
     </div>
   </Transition>
+  <main class="mx-40 overflow-x-hidden">
+    <slot />
+  </main>
 </template>

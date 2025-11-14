@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --background-color: #212121;
 }
 
 body {
   font-family: "Inconsolata", sans-serif;
+  background-color: #212121;
 }
 
 @font-face {
