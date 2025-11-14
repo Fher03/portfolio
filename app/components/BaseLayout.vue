@@ -79,23 +79,32 @@ function showSidebar() {
       </li>
     </ul>
   </nav>
-  <div
-    v-if="isSidebarOpen"
-    class="fixed lg:hidden top-20 bg-[#212121] h-full w-full"
+  <Transition
+    enter-active-class="transition duration-300 ease-out"
+    enter-from-class="opacity-0 -translate-y-4"
+    enter-to-class="opacity-100 translate-y-0"
+    leave-active-class="transition duration-200 ease-in"
+    leave-from-class="opacity-100 translate-y-0"
+    leave-to-class="opacity-0 -translate-y-4"
   >
-    <ul class="flex flex-col  items-center justify-center gap-10 w-full h-full text-white">
-      <li
-        v-for="(link, index) in links"
-        :key="index"
-        class="text-2xl"
-        @click="changeSelectedLink(index)"
-      >
-        <a
-          :href="link.url"
-          :class="{ 'text-red-500': link.isSelected }"
-          >[{{ link.name }}]</a
+    <div
+      v-if="isSidebarOpen"
+      class="fixed lg:hidden top-20 bg-[#212121] h-full w-full"
+    >
+      <ul class="flex flex-col items-center justify-center gap-10 w-full h-full text-white">
+        <li
+          v-for="(link, index) in links"
+          :key="index"
+          class="text-2xl"
+          @click="changeSelectedLink(index)"
         >
-      </li>
-    </ul>
-  </div>
+          <a
+            :href="link.url"
+            :class="{ 'text-red-500': link.isSelected }"
+            >[{{ link.name }}]</a
+          >
+        </li>
+      </ul>
+    </div>
+  </Transition>
 </template>
