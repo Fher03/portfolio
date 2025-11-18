@@ -2,5 +2,6 @@
   <BaseLayout>
     <SectionHero />
     <SectionProjects />
+    <SectionTechnologies />
   </BaseLayout>
 </template>
