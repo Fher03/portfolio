@@ -1,3 +1,6 @@
 <template>
-  <BaseLayout />
+  <BaseLayout>
+    <SectionHero />
+    <SectionProjects />
+  </BaseLayout>
 </template>
