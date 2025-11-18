@@ -55,7 +55,9 @@ const cards: Card[] = [
       <p class="text-gray-500 text-xl">// Algunos de mis trabajos más recientes</p>
     </div>
     <!-- Content -->
-    <div class="flex flex-wrap w-full overflow-y-hidden gap-10 justify-center items-center">
+    <div
+      class="flex flex-wrap w-full overflow-y-hidden gap-5 md:gap-10 xl:gap-20 justify-center items-center md:justify-around xl:justify-between"
+    >
       <!-- Card -->
       <div
         v-for="(card, index) in cards"
@@ -63,7 +65,7 @@ const cards: Card[] = [
         class="flex flex-col justify-between h-[600px] w-sm border-2 border-gray-600/50 p-5"
       >
         <NuxtImg
-          src="/project-image.avif"
+          :src="card.image"
           class="w-72 h-auto mx-auto"
         />
         <h3 class="text-white text-2xl font-bold">{{ card.title }}</h3>

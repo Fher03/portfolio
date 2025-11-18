@@ -76,7 +76,9 @@ function toggleNavbar() {
       </Transition>
     </div>
     <h2 class="flex gap-3 text-center md:text-left w-full text-2xl">
-      <span class="text-red-500">></span> Fher03<span class="text-red-500">_dev</span>
+      <span class="text-red-500 mr-0.5 md:mr-2">></span>Fher03<span class="text-red-500"
+        >dev<span class="animate-blink">_</span></span
+      >
     </h2>
     <ul class="hidden lg:flex items-center justify-end gap-7 w-full">
       <li
