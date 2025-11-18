@@ -17,12 +17,6 @@
           <p class="text-gray-500 text-xl">VueJS</p>
         </div>
       </div>
-      <div>
-        <h3 class="text-3xl text-white font-bold"><span class="text-red-500 font-semibold">//</span> DevOps & Tools</h3>
-      </div>
-      <div>
-        <h3 class="text-3xl text-white font-bold"><span class="text-red-500 font-semibold">//</span> DevOps & Tools</h3>
-      </div>
     </div>
   </section>
 </template>
