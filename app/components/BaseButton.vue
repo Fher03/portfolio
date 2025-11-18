@@ -20,7 +20,7 @@ const hoverStyles: Record<ButtonColor, string> = {
 };
 
 function moveToSection(event: MouseEvent) {
-  if (props.type === "anchor" && props.path.startsWith("#")) {
+  if (props.type === "anchor" && props.path?.startsWith("#")) {
     event.preventDefault();
     const element = document.querySelector(props.path);
     if (element) {

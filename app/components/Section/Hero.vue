@@ -34,6 +34,7 @@ onMounted(() => {
       <p>// Especializado en crear experiencias digitales excepcionales.</p>
     </div>
     <div class="flex gap-10">
+      <!-- Cambiar a otro tipo de acciones -->
       <BaseButton color="primary">Ver Proyectos</BaseButton>
       <BaseButton color="secondary">Contacto</BaseButton>
     </div>
