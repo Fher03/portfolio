@@ -4,7 +4,7 @@ type Links = {
   url: string;
   isSelected?: boolean;
 };
-const isSidebarOpen = ref(false);
+const isNavbarOpen = ref(false);
 const links = reactive<Links[]>([
   {
     name: "Inicio",
@@ -39,7 +39,7 @@ function changeSelectedLink(index: number) {
 }
 
 function toggleNavbar() {
-  isSidebarOpen.value = !isSidebarOpen.value;
+  isNavbarOpen.value = !isNavbarOpen.value;
 }
 </script>
 
@@ -57,7 +57,7 @@ function toggleNavbar() {
         enter-to-class="opacity-100 rotate-0 scale-100"
       >
         <Icon
-          v-if="!isSidebarOpen"
+          v-if="!isNavbarOpen"
           name="charm:menu-hamburger"
           class="text-4xl"
         />
@@ -69,7 +69,7 @@ function toggleNavbar() {
         enter-to-class="opacity-100 rotate-90 scale-100"
       >
         <Icon
-          v-if="isSidebarOpen"
+          v-if="isNavbarOpen"
           name="charm:cross"
           class="text-4xl"
         />
@@ -109,7 +109,7 @@ function toggleNavbar() {
     leave-to-class="opacity-0"
   >
     <div
-      v-if="isSidebarOpen"
+      v-if="isNavbarOpen"
       class="fixed lg:hidden top-20 bg-black/70 backdrop-blur-sm h-full w-full z-50"
       @click="toggleNavbar"
     >
@@ -122,7 +122,7 @@ function toggleNavbar() {
         leave-to-class="opacity-0 -translate-y-4"
       >
         <ul
-          v-if="isSidebarOpen"
+          v-if="isNavbarOpen"
           class="flex flex-col items-center justify-center gap-10 w-full h-full text-white"
         >
           <li
