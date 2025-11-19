@@ -51,7 +51,10 @@ const technologies: Record<"frontend" | "backend" | "devOps", Technology[]> = {
 </script>
 
 <template>
-  <section class="flex flex-col gap-10 h-fit py-20 w-full">
+  <section
+    id="tech"
+    class="flex flex-col gap-10 h-fit py-20 w-full"
+  >
     <div class="w-full flex flex-col gap-2">
       <h2 class="text-4xl text-white">
         <span class="text-red-500 mr-2">></span>Tecnologias<span class="text-red-500 animate-blink">_</span>
