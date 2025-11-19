@@ -35,7 +35,7 @@ onMounted(() => {
     </div>
     <div class="flex gap-10">
       <!-- Cambiar a otro tipo de acciones -->
-      <BaseButton color="primary">Ver Proyectos</BaseButton>
+      <BaseButton color="primary">Descargar CV</BaseButton>
       <BaseButton color="secondary">Contacto</BaseButton>
     </div>
   </section>
