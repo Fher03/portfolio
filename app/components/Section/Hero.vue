@@ -4,6 +4,13 @@ const roles = ['"Full-Stack Developer";', '"Product Manager";', '"Scrum Master";
 
 const { displayedText, isPaused, startTyping } = useTypewriter(roles);
 
+function downloadCV() {
+  const link = document.createElement("a");
+  link.href = "/cv.pdf";
+  link.download = "Fernando_Rodriguez_CV.pdf";
+  link.click();
+}
+
 onMounted(() => {
   startTyping();
 });
@@ -35,7 +42,11 @@ onMounted(() => {
     </div>
     <div class="flex gap-10">
       <!-- Cambiar a otro tipo de acciones -->
-      <BaseButton color="primary">Descargar CV</BaseButton>
+      <BaseButton
+        color="primary"
+        @click.prevent="downloadCV"
+        >Descargar CV</BaseButton
+      >
       <BaseButton color="secondary">Contacto</BaseButton>
     </div>
   </section>
