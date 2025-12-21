@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CardSpotlight from '../ui/card-spotlight/CardSpotlight.vue';
+
 type Card = {
   title: string;
   description: string;
@@ -59,7 +61,7 @@ const cards: Card[] = [
       class="flex flex-wrap w-full overflow-y-hidden gap-5 md:gap-10 xl:gap-20 justify-center items-center md:justify-around xl:justify-between"
     >
       <!-- Card -->
-      <div
+      <CardSpotlight
         v-for="(card, index) in cards"
         :key="index"
         class="flex flex-col justify-between h-[600px] w-sm border-2 border-gray-600/50 p-5"
@@ -86,7 +88,7 @@ const cards: Card[] = [
           >
           <Icon name="heroicons:arrow-right" />
         </div>
-      </div>
+      </CardSpotlight>
     </div>
   </section>
 </template>
