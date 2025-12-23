@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CardSpotlight from '../ui/card-spotlight/CardSpotlight.vue';
+
 type Technology = {
   name: string;
   icon: string;
@@ -64,22 +66,22 @@ const technologies: Record<"frontend" | "backend" | "devOps", Technology[]> = {
     <div class="flex flex-col gap-15">
       <h3 class="text-3xl text-white font-bold"><span class="text-red-500 font-semibold">//</span> FrontEnd</h3>
       <div class="flex flex-col md:flex-row justify-center gap-10">
-        <div
+        <CardSpotlight
           v-for="(tech, index) in technologies.frontend"
           :key="index"
-          class="flex flex-col items-center justify-center gap-5 p-10 border-2 border-gray-500/40 w-full md:w-xs"
+          class="flex flex-col items-center justify-center p-10 border-2 border-gray-500/40 w-full md:w-xs"
         >
           <Icon
             :name="tech.icon"
             class="text-white text-8xl"
           />
-          <p class="text-red-500 text-xl">{{ tech.name }}</p>
-        </div>
+          <p class="text-red-500 text-center text-xl">{{ tech.name }}</p>
+        </CardSpotlight>
       </div>
     </div>
     <h3 class="text-3xl text-white font-bold"><span class="text-red-500 font-semibold">//</span> BackEnd</h3>
     <div class="flex flex-col md:flex-row justify-center gap-10">
-      <div
+      <CardSpotlight
         v-for="(tech, index) in technologies.backend"
         :key="index"
         class="flex flex-col items-center justify-center gap-5 p-10 border-2 border-gray-500/40 w-full md:w-xs"
@@ -88,12 +90,12 @@ const technologies: Record<"frontend" | "backend" | "devOps", Technology[]> = {
           :name="tech.icon"
           class="text-white text-8xl"
         />
-        <p class="text-red-500 text-xl">{{ tech.name }}</p>
-      </div>
+        <p class="text-red-500 text-center text-xl">{{ tech.name }}</p>
+      </CardSpotlight>
     </div>
     <h3 class="text-3xl text-white font-bold"><span class="text-red-500 font-semibold">//</span> DevOps & Tools</h3>
     <div class="flex flex-col md:flex-row justify-center gap-10">
-      <div
+      <CardSpotlight
         v-for="(tech, index) in technologies.devOps"
         :key="index"
         class="flex flex-col items-center justify-center gap-5 p-10 border-2 border-gray-500/40 w-full md:w-xs"
@@ -102,8 +104,8 @@ const technologies: Record<"frontend" | "backend" | "devOps", Technology[]> = {
           :name="tech.icon"
           class="text-white text-8xl"
         />
-        <p class="text-red-500 text-xl">{{ tech.name }}</p>
-      </div>
+        <p class="text-red-500 text-center text-xl">{{ tech.name }}</p>
+      </CardSpotlight>
     </div>
   </section>
 </template>
