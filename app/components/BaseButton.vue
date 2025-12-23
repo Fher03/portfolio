@@ -38,7 +38,7 @@ function moveToSection(event: MouseEvent) {
   <button
     v-if="props.type !== 'anchor'"
     :type="props.type || 'button'"
-    class="bg-transparent border-2 px-4 xl:px-6 py-3 text-lg xl:text-xl group relative overflow-hidden transition-colors duration-300"
+    class="cursor-pointer bg-transparent border-2 px-4 xl:px-6 py-3 text-lg xl:text-xl group relative overflow-hidden transition-colors duration-300"
     :class="[colorStyles[props.color || 'primary']]"
   >
     <span
