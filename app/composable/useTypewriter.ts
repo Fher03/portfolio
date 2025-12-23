@@ -14,7 +14,6 @@ export const useTypewriter = (
       const currentText = texts[currentIndex.value] || "";
 
       if (isPaused.value) {
-        console.log("Se pausa");
         setTimeout(() => {
           isPaused.value = false;
           isDeleting.value = true;
@@ -25,12 +24,6 @@ export const useTypewriter = (
 
       if (!isDeleting.value) {
         if (displayedText.value.length < currentText.length) {
-          console.log(
-            "Escribiendo:",
-            displayedText.value.length,
-            "/",
-            currentText.length
-          );
           displayedText.value = currentText.slice(
             0,
             displayedText.value.length + 1
@@ -38,7 +31,6 @@ export const useTypewriter = (
           setTimeout(type, typingSpeed);
         } else {
           // Terminó de escribir, activar pausa
-          console.log("Texto completo, pausando...");
           isPaused.value = true;
           type(); // ⬅️ Llamar de nuevo para entrar en el bloque de pausa
         }
@@ -46,12 +38,10 @@ export const useTypewriter = (
       // 3. Si SÍ está borrando
       else {
         if (displayedText.value.length > 0) {
-          console.log("Borrando...");
           displayedText.value = displayedText.value.slice(0, -1);
           setTimeout(type, deleteSpeed);
         } else {
           // Terminó de borrar, pasar al siguiente texto
-          console.log("Cambio de texto");
           isDeleting.value = false;
           currentIndex.value = (currentIndex.value + 1) % texts.length;
           setTimeout(type, 500);
