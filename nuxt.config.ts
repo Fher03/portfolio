@@ -26,9 +26,9 @@ export default defineNuxtConfig({
           rel: "stylesheet",
         },
         {
-          href: "/favico.png",
+          href: "/favico.svg",
           rel: "icon",
-          type: "image/x-icon"
+          type: "image/svg+xml"
         }
       ],
     },
