@@ -16,10 +16,10 @@ const cards: Card[] = [
       "Para el desarrollo de la landing page de Neuropoint AI, se integró un conjunto de habilidades técnicas avanzadas en diseño y desarrollo web. El proyecto destacó por la creación de una interfaz UI/UX intuitiva y responsiva, orientada a proyectar innovación tecnológica. En el ámbito del desarrollo, se implementó una arquitectura sólida capaz de gestionar el consumo de APIs externas, permitiendo la integración de un chat de inteligencia artificial conversacional en tiempo real. Asimismo, se configuraron servicios de mensajería electrónica para automatizar la comunicación y captación de leads. Este proceso requirió un dominio profundo de lenguajes modernos, gestión de estados y manejo de protocolos de seguridad, logrando una plataforma robusta, escalable y optimizada para ofrecer una experiencia de usuario excepcional y vanguardista.",
     link: "https://comerbot.neuropoint.ai/",
     image: "/projects/comerbot_promotional.png",
-    tags: ["Chat IA", "NuxtJS", "Figma"],
+    tags: ["Chat IA", "FrontEnd", "Diseño Web"],
   },
   {
-    title: "Muy pronto",
+    title: "Muy pronto...",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum facilis, velit esse reprehenderit voluptatibusdeleniti consequatur corporis qui, quibusdam, molestiae asperiores. Numquam aliquam excepturi nostrum vitaeincidunt natus quo molestiae.",
     link: "#",
@@ -27,7 +27,7 @@ const cards: Card[] = [
     tags: ["No Tech"],
   },
   {
-    title: "Muy pronto",
+    title: "Muy pronto...",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum facilis, velit esse reprehenderit voluptatibusdeleniti consequatur corporis qui, quibusdam, molestiae asperiores. Numquam aliquam excepturi nostrum vitaeincidunt natus quo molestiae.",
     link: "#",
