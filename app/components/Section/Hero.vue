@@ -18,7 +18,7 @@ onMounted(() => {
 <template>
   <section
     id="hero"
-    class="flex flex-col h-[700px] gap-10 xl:gap-7 text-center items-center justify-center md:h-[500px] xl:h-screen w-full"
+    class="flex flex-col h-175 gap-10 xl:gap-7 text-center items-center justify-center md:h-125 xl:h-screen w-full"
   >
     <h1 class="text-6xl xl:text-8xl text-white font-bold">
       <span class="text-red-500 mr-2 xl:mr-16">></span>Fernando Rodríguez<span class="text-red-500 animate-blink"

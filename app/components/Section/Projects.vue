@@ -16,7 +16,7 @@ const cards: Card[] = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum facilis, velit esse reprehenderit voluptatibusdeleniti consequatur corporis qui, quibusdam, molestiae asperiores. Numquam aliquam excepturi nostrum vitaeincidunt natus quo molestiae.",
     link: "https://comerbot.neuropoint.ai/",
     image: "/projects/comerbot_promotional.png",
-    tags: ["Chat IA", "VueJS", "Figma"],
+    tags: ["Chat IA", "NuxtJS", "Figma"],
   },
   {
     title: "Muy pronto",
