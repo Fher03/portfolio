@@ -50,7 +50,13 @@ function toggleNavbar() {
   <nav
     class="z-50 fixed top-0 text-white flex gap-10 px-10 md:px-20 items-center h-20 w-full border-b-2 border-gray-600/50 bg-[#212121]"
   >
-    <div class="md:hidden cursor-pointer" @click="toggleNavbar">
+    <h2 class="flex gap-3 text-center md:text-left w-full text-2xl">
+      <span class="text-red-500 mr-0.5 md:mr-2">></span>Fher03<span
+        class="text-red-500"
+        >dev<span class="animate-blink">_</span></span
+      >
+    </h2>
+    <div class="md:hidden cursor-pointer flex items-center" @click="toggleNavbar">
       <Transition
         enter-from-class="opacity-0 rotate-90 scale-50"
         enter-active-class="duration-300 transition ease-out"
@@ -71,12 +77,6 @@ function toggleNavbar() {
         <Icon v-if="isNavbarOpen" name="charm:cross" class="text-4xl" />
       </Transition>
     </div>
-    <h2 class="flex gap-3 text-center md:text-left w-full text-2xl">
-      <span class="text-red-500 mr-0.5 md:mr-2">></span>Fher03<span
-        class="text-red-500"
-        >dev<span class="animate-blink">_</span></span
-      >
-    </h2>
     <ul class="hidden lg:flex items-center justify-end gap-7 w-full">
       <li
         v-for="(link, index) in links"
