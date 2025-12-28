@@ -1,0 +1,146 @@
+<script setup lang="ts">
+type Links = {
+  name: string;
+  url: string;
+  isSelected?: boolean;
+};
+const isNavbarOpen = ref(false);
+const links = reactive<Links[]>([
+  {
+    name: "Inicio",
+    url: "#hero",
+    isSelected: true,
+  },
+  {
+    name: "Proyectos",
+    url: "#projects",
+  },
+  {
+    name: "Tecnologias",
+    url: "#tech",
+  },
+  {
+    name: "Sobre mí",
+    url: "#aboutme",
+  },
+  {
+    name: "Contacto",
+    url: "#contact",
+  },
+]);
+
+function changeSelectedLink(index: number) {
+  links.forEach((link) => {
+    link.isSelected = false;
+  });
+  if (links[index]) {
+    links[index].isSelected = true;
+  }
+  setTimeout(() => {
+    isNavbarOpen.value = false;
+  }, 100);
+}
+
+function toggleNavbar() {
+  isNavbarOpen.value = !isNavbarOpen.value;
+}
+</script>
+
+<template>
+  <nav
+    class="z-50 fixed top-0 text-white flex gap-10 px-10 md:px-20 items-center h-20 w-full border-b-2 border-gray-600/50 bg-[#212121]"
+  >
+    <h2 class="flex gap-3 text-center md:text-left w-full text-2xl">
+      <span class="text-red-500 mr-0.5 md:mr-2">></span>Fher03<span
+        class="text-red-500"
+        >dev<span class="animate-blink">_</span></span
+      >
+    </h2>
+    <div class="md:hidden cursor-pointer flex items-center" @click="toggleNavbar">
+      <Transition
+        enter-from-class="opacity-0 rotate-90 scale-50"
+        enter-active-class="duration-300 transition ease-out"
+        enter-to-class="opacity-100 rotate-0 scale-100"
+      >
+        <Icon
+          v-if="!isNavbarOpen"
+          name="charm:menu-hamburger"
+          class="text-4xl"
+        />
+      </Transition>
+
+      <Transition
+        enter-from-class="opacity-0 rotate-0 scale-50"
+        enter-active-class="duration-300 transition ease-out"
+        enter-to-class="opacity-100 rotate-90 scale-100"
+      >
+        <Icon v-if="isNavbarOpen" name="charm:cross" class="text-4xl" />
+      </Transition>
+    </div>
+    <ul class="hidden lg:flex items-center justify-end gap-7 w-full">
+      <li
+        v-for="(link, index) in links"
+        :key="index"
+        class="cursor-pointer hover:text-red-400 transition-colors"
+        @click="
+          changeSelectedLink(index);
+          toggleNavbar;
+        "
+      >
+        <BaseButton
+          type="anchor"
+          :path="link.url"
+          :class="{ 'text-red-500': link.isSelected }"
+          >{{ link.name }}</BaseButton
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <Transition
+    enter-active-class="transition duration-300 ease-out"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-active-class="transition duration-200 ease-in"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
+    <div
+      v-if="isNavbarOpen"
+      class="fixed lg:hidden top-20 bg-black/70 backdrop-blur-sm h-full w-full z-50"
+      @click="toggleNavbar"
+    >
+      <Transition
+        enter-active-class="transition duration-300 ease-out delay-100"
+        enter-from-class="opacity-0 -translate-y-4"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-4"
+      >
+        <ul
+          v-if="isNavbarOpen"
+          class="flex flex-col items-center justify-center gap-10 w-full h-full text-white"
+        >
+          <li
+            v-for="(link, index) in links"
+            :key="index"
+            class="text-2xl cursor-pointer"
+            @click.stop="
+              changeSelectedLink(index);
+              toggleNavbar;
+            "
+          >
+            <a :href="link.url" :class="{ 'text-red-500': link.isSelected }"
+              >[{{ link.name }}]</a
+            >
+          </li>
+        </ul>
+      </Transition>
+    </div>
+  </Transition>
+
+  <main class="mx-6 xl:mx-40 overflow-x-hidden pt-20">
+    <slot />
+  </main>
+</template>

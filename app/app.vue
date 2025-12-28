@@ -1,6 +1,8 @@
 <template>
-  <BaseLayout>
+  <NavBar>
     <SectionHero />
     <SectionProjects />
-  </BaseLayout>
+    <SectionTechnologies />
+    <SectionAboutMe />
+  </NavBar>
 </template>
