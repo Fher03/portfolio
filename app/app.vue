@@ -4,5 +4,6 @@
     <SectionProjects />
     <SectionTechnologies />
     <SectionAboutMe />
+    <SectionContact />
   </NavBar>
 </template>

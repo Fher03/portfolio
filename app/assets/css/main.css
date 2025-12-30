@@ -3,7 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 body {
   font-family: "Inconsolata", sans-serif;
   background-color: #171717;
